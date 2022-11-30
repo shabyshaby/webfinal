@@ -1,0 +1,66 @@
+
+
+h1{
+        color: #49A078;
+        text-shadow: 0.5px 1px #216869;
+        text-align: center;
+        font-size: 28px;
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+}
+
+h2{
+        margin: 20px;
+        color: #216869;
+        font-size: 18px;
+        font-family: 'Playfair Display', serif;
+}
+
+form{
+        color: #0A1E20;
+        margin: 20px;
+        font-size: 14px;
+        font-family: 'Georgia', serif;
+        
+}
+
+p{
+        color: #0A1E20;
+        margin: 20px;
+        font-size: 14px;
+        font-family: 'Georgia', serif;
+}
+
+a{
+        margin: 20px;
+        color: #49A078;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: 'Georgia', serif;
+}
+
+button{
+        width: 150px;
+        height: 50px;
+        margin: 20px;
+        border: double #DCE1DE 2px;
+        background-color: #9CC5A1;
+        color: #0A1E20;
+        font-family: 'Georgia', serif;
+}
+
+body{
+        background-color: #DCE1DE;
+}
+
+a:hover{
+        color: #216869;
+}
+
+button:hover{
+        background-color: #49A078;
+        color: #0A1E20;
+}
+
+
+
