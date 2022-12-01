@@ -32,7 +32,6 @@ p{
 }
 
 a{
-        margin: 20px;
         color: #49A078;
         text-decoration: none;
         font-size: 14px;
@@ -62,5 +61,35 @@ button:hover{
         color: #0A1E20;
 }
 
+table{
+        margin: auto;
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #216869;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li.nav {
+  float: left;
+}
+
+a.nav {
+  display: block;
+  color: #DCE1DE;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+/* Change the link color to #111 (black) on hover */
+a.nav:hover {
+  color: #9CC5A1;
+}
 
 
