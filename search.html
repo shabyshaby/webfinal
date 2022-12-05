@@ -4,10 +4,24 @@
 <link rel="stylesheet" href="style.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+input.pages {width: 30px;}
+input{margin-top: 5px;}
 </style>
 </head>
 <body>
-
-
+        <h1>Find Books</h1>
+        
+        <form style="text-align:center" method='post' action='results.php'>
+        Search by:</br>
+        Title<input type="radio" value="title" name="search"></input><br/>  
+        Author<input type="radio" value="author" name="search"></input> <br/> 
+        Genre<input type="radio" value="genre" name="search"><br/>
+        <input type="text" name="searchbar"></input><br/><br/> 
+        Filter by Page Number:<br/> 
+        Minimum pages: <input class="pages" type="text" name="minpages"></input><br>
+        Maximum pages: <input class="pages" type="text" name="maxpages"></input><br/><br/>
+        <input type="submit" name="submit"></input>
+        </form>
+        
 </body>
 </html>

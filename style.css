@@ -20,15 +20,14 @@ form{
         color: #0A1E20;
         margin: 20px;
         font-size: 14px;
-        font-family: 'Georgia', serif;
-        
+        font-family: 'Georgia', serif;        
 }
 
 p{
         color: #0A1E20;
-        margin: 20px;
         font-size: 14px;
         font-family: 'Georgia', serif;
+        padding: 10px;
 }
 
 a{
@@ -48,15 +47,31 @@ button{
         font-family: 'Georgia', serif;
 }
 
+input[type=submit]{
+        width: 150px;
+        height: 50px;
+        border: double #DCE1DE 2px;
+        background-color: #9CC5A1;
+        color: #0A1E20;
+        font-family: 'Georgia', serif;
+}
+
 body{
         background-color: #DCE1DE;
 }
+
+
 
 a:hover{
         color: #216869;
 }
 
 button:hover{
+        background-color: #49A078;
+        color: #0A1E20;
+}
+
+input[type=submit]:hover{
         background-color: #49A078;
         color: #0A1E20;
 }
@@ -85,6 +100,12 @@ a.nav {
   color: #DCE1DE;
   text-align: center;
   padding: 20px 20px;
+}
+
+div.result{
+        border: double #DCE1DE 2px;
+        background-color: #9CC5A1;
+        color: #0A1E20;
 }
 
 /* Change the link color to #111 (black) on hover */
