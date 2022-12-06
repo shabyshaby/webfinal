@@ -80,26 +80,53 @@ table{
         margin: auto;
 }
 
-ul.nav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #216869;
-  position: fixed;
-  top: 0;
-  width: 100%;
+
+nav{
+        display: flex;
+        padding: 0% 0%;
+        align-items: left;
+        font-family: Georgia;
+        background-color: #216869;
 }
 
-li.nav {
-  float: left;
+.nav-links{
+        flex: 1;
+        text-align: left;
+}
+.nav-links ul li{
+        padding-right: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        list-style: none;
+        display: block;
+        position: relative;
+}
+.nav-links ul li a{
+        color: #DCE1DE;
+        text-decoration: none;
+        font-size: 18px;
+        
 }
 
-a.nav {
-  display: block;
-  color: #DCE1DE;
-  text-align: center;
-  padding: 20px 20px;
+.menu{
+        display: flex;
+        align-items: left;
+        list-style: none;
+}
+
+.logo {
+        flex: 0;
+}
+.logo a{
+        display: flex;
+        align-items: left;
+}
+.logo img{
+        top: 0;
+        left:0;
+        margin-top: 10px;
+        margin-left: 10px;
+        height: 50px;
 }
 
 div.result{
@@ -108,7 +135,7 @@ div.result{
         color: #0A1E20;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Change the link coloron hover */
 a.nav:hover {
   color: #9CC5A1;
 }

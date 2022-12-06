@@ -69,7 +69,8 @@
             $descrip = $conn->query($descripsql);
             echo "<div style='result'> 
                 <p>".$title." by ". $author. "</br> Genre(s): ". $genre. 
-                "Page Count: ".$pages."</div>";
+                "Page Count: ".$pages.
+                "<button name='cart'>Add To Cart</button></div>";
         }
         
         ?>
