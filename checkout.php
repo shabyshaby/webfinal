@@ -50,16 +50,16 @@ p, h2 {text-align: center;}
                 }
 
                 $conn->select_db($database);
-                $sql = "SELECT customer_id FROM Accounts WHERE username ==". $user;
+                $sql = "SELECT CustomerID FROM Accounts WHERE Username ==". $user;
                 
                 $result = $conn->query($sql);
                 if($result->num_rows == 1){
                         while($row = $result->fetch_assoc()){
-                                $cid = $row['customer_id'];
+                                $cid = $row['CustomerID'];
                         }
                 }
                 
-                $bookquery = "SELECT Book FROM Orders WHERE customer_id ==".$cid;
+                $bookquery = "SELECT Book FROM Orders WHERE CustomerID ==".$cid;
                 $books = $conn->query($sql);
                 $titlelist = array();
                 if($books->num_rows > 0){
@@ -123,7 +123,7 @@ p, h2 {text-align: center;}
         search2 = "https://www.googleapis.com/books/v1/volumes?q=+subject:" + best +"&key=AIzaSyAGIH-IR7IyPY41F7JrFyvMw-ZgfhtN1U0";
         req.open("GET", "", true);
         console.log("opened file");
-        req.onreadystatechange = function(){
+        req.onreadystatechange = function(){id
         console.log("event fired");
         if(req.readyState == 4 && req.status == 200){
                 data = req.responseText;
