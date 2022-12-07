@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 ?>
 
 
@@ -11,6 +12,24 @@ session_start();
         <title>Orders</title>
     </head>
     <body>
+        
+        
+            <link rel="stylesheet" href="style.css">
+        <nav>
+                <div class="logo"><a alt="logo" href="index.html" ><img id="fLogo" src="BostonBooksDark.png"></a></div>
+                <div class="nav-links">
+                    <div class="toggle">
+                        <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
+                    </div>
+                    <ul class="menu">
+                            <li class='nav'><a href="/index.html" class="nav">Home</a></li>
+                            <li class='nav'><a href="/register.html" class="nav">Log In</a></li>
+                            <li class='nav'><a href="/search.html" class="nav">Search</a></li>
+                            <li class='nav'><a href="/cart.html" class="nav">My Cart</a></li>
+                            <li class='nav'><a href="/orders.html" class="nav">My Orders</a></li>
+                    </ul>
+                </div>
+        </nav>
         
         <h1>Your Orders:</h1>
         
