@@ -15,10 +15,12 @@ session_start();
             table, th, td {
             border: 1px double black;
 
-            .data {
-                padding : 9%;
+            orderTable {
+                background-color: #f7e7b5;
+                background-image: linear-gradient(#f7e7b5, #DCE1DE);
+                margin-left: 30%;
+                margin-right: 30%;
             }
-
 
         }
             
@@ -53,8 +55,8 @@ session_start();
     	
     	//establish connection info
     $server = "127.0.0.1";// your server
-    $userid = "urdpwpzt7zxal"; // your user id
-    $pw = "1gd6hrg}~tIf"; // your pw
+    $userid = "u6tlgvskjxeca"; // your user id
+    $pw = "byrzzin3pfch"; // your pw
     $db= "dbh9efiblg6paz"; // your database
     		
     // Create connection
@@ -69,10 +71,14 @@ session_start();
     //select the database
     $conn->select_db($db);
     
-    $_SESSION["User"] = DKing;
+    $_SESSION["User"] = "Tim";
         
     	//run a query
-    $sql = "SELECT Book, Author, Order_Date, Return_Date, Price FROM Orders INNER JOIN Accounts ON Orders.CustomerID = Accounts.Account_ID WHERE User = '" .$_SESSION["User"] ."'";
+    $sql = "SELECT Book, Author, Order_Date, Return_Date, Price FROM Orders INNER JOIN Accounts ON Orders.CustomerID = Accounts.Account_ID WHERE User = '";
+    $sql .= $_SESSION["User"];
+    $sql .= "'";
+
+
     $result = $conn->query($sql);
     
     // $_SESSION["prices"] = array();
@@ -84,8 +90,11 @@ session_start();
     //get results
     if ($result->num_rows > 0) 
     {
-        echo "<table name = 'orderTable'>
-            <tr>
+        echo "<div style = 'background-color: #f7e7b5;
+                background-image: linear-gradient(#f7e7b5, #DCE1DE);
+                margin-left: 30%;
+                margin-right: 29%'><table>
+            <tr style = 'color: #49A078'>
                 <th style = 'padding: 0px 20px'>Title</th>
                 <th style = 'padding: 0px 20px'>Author</th>
                 <th style = 'padding: 0px 20px'>Order date</th>
@@ -107,7 +116,7 @@ session_start();
             
 
        }
-       echo "</table>";
+       echo "</table></div>";
        
     } 
     else 
