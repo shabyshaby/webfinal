@@ -10,6 +10,19 @@ session_start();
     <head>
         <meta charset="utf-8">
         <title>Orders</title>
+
+        <style media="screen">
+            table, th, td {
+            border: 1px double black;
+
+            .data {
+                padding : 9%;
+            }
+
+
+        }
+            
+        </style>
     </head>
     <body>
         
@@ -56,6 +69,7 @@ session_start();
     //select the database
     $conn->select_db($db);
     
+    $_SESSION["User"] = DKing;
         
     	//run a query
     $sql = "SELECT Book, Author, Order_Date, Return_Date, Price FROM Orders INNER JOIN Accounts ON Orders.CustomerID = Accounts.Account_ID WHERE User = '" .$_SESSION["User"] ."'";
@@ -70,23 +84,27 @@ session_start();
     //get results
     if ($result->num_rows > 0) 
     {
-        echo "<table> name = 'orderTable'
+        echo "<table name = 'orderTable'>
             <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Order date</th>
-                <th>Return date</th>
-                <th>Price</th>
+                <th style = 'padding: 0px 20px'>Title</th>
+                <th style = 'padding: 0px 20px'>Author</th>
+                <th style = 'padding: 0px 20px'>Order date</th>
+                <th style = 'padding: 0px 20px'>Return date</th>
+                <th style = 'padding: 0px 20px'>Price</th>
             </tr>";
             
             
         while($row = $result->fetch_assoc()) 
        {
-        	echo "<tr><td>". $row["Book"]. "</td><td>". $row["Author"]. "</td><td>". $row["Order_Date"]. "/<td><td>". $row["Return_Date"]. "</td><td>" .$row["Price"] ."</td></tr>";
-
-            array_push($_SESSION["prices"], $row["unitPrice"]);
-            array_push($_SESSION["images"], $row["image"]);
-            array_push($_SESSION["items"], $row["itemName"]);
+        	//echo "<tr><td>" .$row["Book"] ."</td><td>" .$row["Author"] ."</td><td>" .$row["Order_Date"] ."/<td><td>" .$row["Return_Date"] ."</td><td>" .$row["Price"] ."</td></tr>";
+            echo "<tr><td style = 'padding: 0px 20px'>";
+            echo $row["Book"] ."</td><td style = 'padding: 0px 20px'>";
+            echo $row["Author"] ."</td><td style = 'padding: 0px 20px'>";
+            echo $row["Order_Date"] ."</td><td style = 'padding: 0px 20px'>";
+            echo $row["Return_Date"] ."</td><td style = 'padding: 0px 20px'>";
+            echo "$" .$row["Price"] ."</td></tr>";
+            
+            
 
        }
        echo "</table>";
