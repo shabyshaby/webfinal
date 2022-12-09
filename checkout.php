@@ -50,7 +50,7 @@ p, h2 {text-align: center;}
                 }
 
                 $conn->select_db($database);
-                $sql = "SELECT CustomerID FROM Accounts WHERE Username ==". $user;
+                $sql = "SELECT CustomerID FROM Accounts WHERE Username =". $user;
                 
                 $result = $conn->query($sql);
                 if($result->num_rows == 1){
@@ -59,7 +59,7 @@ p, h2 {text-align: center;}
                         }
                 }
                 
-                $bookquery = "SELECT Book FROM Orders WHERE CustomerID ==".$cid;
+                $bookquery = "SELECT Book FROM Orders WHERE CustomerID =".$cid;
                 $books = $conn->query($sql);
                 $titlelist = array();
                 if($books->num_rows > 0){
