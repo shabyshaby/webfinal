@@ -120,7 +120,7 @@ session_start();
        
     } 
     else 
-      echo "no results";
+      echo "<br><h2>no results</h2>";
     	
     //close the connection	
     $conn->close();
