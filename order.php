@@ -71,7 +71,7 @@ session_start();
     //select the database
     $conn->select_db($db);
     
-    $_SESSION["User"] = "Tim";
+   
         
     	//run a query
     $sql = "SELECT Book, Author, Order_Date, Return_Date, Price FROM Orders INNER JOIN Accounts ON Orders.CustomerID = Accounts.Account_ID WHERE User = '";
