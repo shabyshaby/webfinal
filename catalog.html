@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="catalog.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="js/app.js"></script> -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+</style>
+</head>
+<body>
+    <ul class='nav'>
+        <li class='nav'><a href="./index.html" class="nav">Home</a></li>
+        <li class='nav'><a href="./register.html" class="nav">Log In</a></li>
+        <li class='nav'><a href="./catalog.html" class="nav">Catalog</a></li>
+        <li class='nav'><a href="./cart.html" class="nav">My Cart</a></li>
+    </ul>
+    <script src="https://kit.fontawesome.com/0b6f7f1c02.js" crossorigin="anonymous"></script>
+    <div class="header">
+        <div class="row1">
+            <h1><strong>FEATURED</strong><br>
+            Mythology (75th Anniversary Illustrated Edition)<br>
+            Timeless Talesof Gods and Heroes</h1>
+        </div>
+        <div class="row2">
+           
+            <img src="./images/greek.jpg" alt="" />
+        </div>
+        <div class="row3">
+            <h2>Feed your soul with our countless <br> collage of books 
+            </h2>
+        </div>
+        <div class="row4">
+            <div class="search-bar">
+                <input class="search-box" id="search-box" type="text" placeholder="Search Book Title, Author, Genre..."/>
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="row5">
+            <div class="featured-info" style="color: #aaf0aa">
+                <h2 style="color: (#ccd4c6, #dde1de);">Search up greek mythology to keep exploring</h2>
+            </div>
+        </div>
+    </div>
+    <section id="search" class="results">
+        <div class="flex">
+            <h1 class="section-title">Results</h1>
+        </div>
+        <div class="book-listing search categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="mystery"class="results" style="margin-top: 100px;">
+        <div class="flex">
+            <h1 class="section-title">New Releases</h1>
+            <div>
+                <button
+                    id = "mystery-prev"
+                    class = "pagination prev"
+                    onclick = "prev('mystery')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "mystery-next"
+                    class = "pagination next"
+                    onclick = "next('mystery')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing mystery categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="fantasy"class="results">
+        <div class="flex">
+            <h1 class="section-title">Fantasy</h1>
+            <div>
+                <button
+                    id = "fantasy-prev"
+                    class = "pagination prev"
+                    onclick = "prev('fantay')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "fantasy-next"
+                    class = "pagination next"
+                    onclick = "next('fantasy')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing fantasy categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="history"class="results">
+        <div class="flex">
+            <h1 class="section-title">History</h1>
+            <div>
+                <button
+                    id = "history-prev"
+                    class = "pagination prev"
+                    onclick = "prev('history')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "history-next"
+                    class = "pagination next"
+                    onclick = "next('history')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing history categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+        <div class="fade left"></div>
+        <div class="fade right"></div>
+    </section>
+    <section id="poetry"class="results">
+        <div class="flex">
+            <h1 class="section-title">Poetry</h1>
+            <div>
+                <button
+                    id = "poetry-prev"
+                    class = "pagination prev"
+                    onclick = "prev('poetry')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "poetry-next"
+                    class = "pagination next"
+                    onclick = "next('poetry')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing poetry categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="thriller"class="results">
+        <div class="flex">
+            <h1 class="section-title">Thriller</h1>
+            <div>
+                <button
+                    id = "thriller-prev"
+                    class = "pagination prev"
+                    onclick = "prev('thriller')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "thriller-next"
+                    class = "pagination next"
+                    onclick = "next('thriller')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing thriller categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="nature"class="results">
+        <div class="flex">
+            <h1 class="section-title">Nature</h1>
+            <div>
+                <button
+                    id = "nature-prev"
+                    class = "pagination prev"
+                    onclick = "prev('nature')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "nature-next"
+                    class = "pagination next"
+                    onclick = "next('nature')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing nature categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="cooking"class="results">
+        <div class="flex">
+            <h1 class="section-title">Cooking</h1>
+            <div>
+                <button
+                    id = "cooking-prev"
+                    class = "pagination prev"
+                    onclick = "prev('cooking')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "cooking-next"
+                    class = "pagination next"
+                    onclick = "next('cooking')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing cooking categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <section id="comics"class="results">
+        <div class="flex">
+            <h1 class="section-title">Comics</h1>
+            <div>
+                <button
+                    id = "comics-prev"
+                    class = "pagination prev"
+                    onclick = "prev('comics')"
+                >
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button
+                    id = "comics-next"
+                    class = "pagination next"
+                    onclick = "next('comics')"
+                >
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="book-listing comics categories">
+            <div class="prompt">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+
+</body>   
+<script src="catalog.js"></script>
+</html>
