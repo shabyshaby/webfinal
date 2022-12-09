@@ -56,6 +56,10 @@
                     //Should make alert message more descritptive
                 }
             }
+            
+             if (!((document.getElementsByName("email")[0].value.includes("@")) && (document.getElementsByName("email")[0].value.includes(".")))) {
+                    alert("Please enter a valid email address");
+                }
 
             if (arr.length === 0) { // if form has been successfully field
                 alert("Thank you for filling out this form");
