@@ -53,7 +53,8 @@ const fillShelf = async (subject, startIndex = 0) => {
         //Getting specific data from the JSON shelf 
         shelf.innerHTML = books.items;
         shelf.innerHTML = books.items.map(
-            ({volumeInfo, number = randomNumber(7,20), price = randomPrice(number)}) => 
+            ({volumeInfo, number = randomNumber(7,20), price = randomPrice(number), thumbnail = getCover(volumeInfo)}) => 
+            // console.log(thumbnail)
             `<div class='book' style='background: linear-gradient(#ccd4c6, #dde1de);'>
                 <img class='cover' src='` + getCover(volumeInfo) + `' alt='cover' onclick='toggleDesc(this);'>` +
                     `<div class='desc' style="display: none">
@@ -70,7 +71,7 @@ const fillShelf = async (subject, startIndex = 0) => {
                                  : volumeInfo.description)
                                 +
                             `</h3></div>
-                            <button id='add' onclick='' value='${price}' style='margin-top: 10px;'>Add To Cart</button>
+                            <button id='add' onclick="AddtoCart(this);" value='${price}' style='margin-top: 10px;'>Add To Cart</button>
                         </div>
                     </div>` + 
                 `<div class='book-info'><h3 class='book-title'>${volumeInfo.title}</h3>
@@ -84,7 +85,7 @@ const fillShelf = async (subject, startIndex = 0) => {
                         ? "Others"
                         : volumeInfo.categories) +
                     `</div>     
-                    <button id='add' onclick='' value='${price}' style='margin-left: 0; margin-top: 10px;'>
+                    <button id='add' onclick='AddtoCart(this)' value='${price}' style='margin-left: 0; margin-top: 10px;'>
                         Add To Cart 
                     </button>                       
                 </div>
@@ -129,7 +130,7 @@ const fillSearchShelf = async () => {
                                  : volumeInfo.description)
                                 +
                             `</h3></div>
-                                <button id='add' onclick='' value='${price}' style='margin-top: 10px;'>Add To Cart</button>
+                                <button id='add' onclick='AddtoCart(this)' value='${price}' style='margin-top: 10px;'>Add To Cart</button>
                             </div>
                         </div>` + 
                     `<div class='book-info'><h3 class='book-title'>${volumeInfo.title}</h3>
@@ -143,7 +144,7 @@ const fillSearchShelf = async () => {
                             ? "Others"
                             : volumeInfo.categories) +
                         `</div>     
-                        <button id='add' onclick='' value='${price}' style='margin-left: 0; margin-top: 10px;'>
+                        <button id='add' onclick='AddtoCart(this)' value='${price}' style='margin-left: 0; margin-top: 10px;'>
                             Add To Cart 
                         </button>                       
                     </div>
@@ -152,7 +153,6 @@ const fillSearchShelf = async () => {
         }
     } else {
         searchToggle.style.display = "none";
-        // searchShelf.style.display = "none";
     }
 }
 
@@ -245,6 +245,46 @@ const prev = (subject) => {
       fillShelf(subject, startIndex);
     }
   };
+
+function AddtoCart(item){
+    console.log("HERE");
+    $(".desc").hide();
+    showCart(); 
+    let title = $(item).siblings("h3").text();
+    if (title == ""){
+        title = $(item).siblings("h1").text();
+    }
+    var html = `<tr> <td> ${title}</td>
+    <td class="prices" value=${item.value}> ${item.value} </td>
+    <td onclick='RemoveItem(this)'><button id=remove> &times; </button> </td> </tr>`;
+    $("#shopping_cart").append(html);
+    return true;
+}
+function showCart(){
+    $(".cart-container").attr("style", "display: block");
+    
+}
+function hideCart(){
+    $(".cart-container").attr("style", "display: none");
+}
+
+function RemoveItem(btn){
+    $(btn).parent().remove();
+}
+function finalamount(){
+    //CREATE VALIDATE FUNCTION THAT CHECKS IF THEYRE LOGGED IN BEFORE THEY GET THROUGH FINAL AMOUNT
+    var listquan = document.querySelectorAll('#quan');
+    var listprices = document.querySelectorAll('td.prices');
+    var curr_total = 0.00;
+
+    for(i = 0; i < listquan.length; i++){
+        curr_total += parseFloat(listquan[i].value) * parseFloat(listprices[i].innerHTML);
+    }
+
+    document.price = "price=" + curr_total.toFixed(2) + ";path=./checkout.php";
+    location.replace("./checkout.php");
+    
+}
 
 
 

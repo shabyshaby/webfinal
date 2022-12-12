@@ -397,3 +397,55 @@ h1{
   right: 0;
   background: linear-gradient(to left, var(--bg-color), transparent);
 }
+.cart-container{
+  z-index: 1100;
+  right: 0;
+  top: 0;
+  display: none;
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  background-color: #DCE1DE;
+  box-shadow: -22px -1px 57px 12px rgba(0,0,0,0.29);
+  -webkit-box-shadow: -22px -1px 57px 12px rgba(0,0,0,0.29);
+  -moz-box-shadow: -22px -1px 57px 12px rgba(0,0,0,0.29);
+}
+
+.cart-head{
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+th{
+  color: #216869;
+ 
+}
+#check{
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  margin-top:10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: green;
+  /* color: white; */
+  padding: 10px;
+  border-radius: 10px;
+}
+#check:hover{
+  cursor: pointer;
+}
+.prompt-info h2{
+  margin: 10px;
+}
+th, tr, td{
+  font-size: 20px;
+  padding: 10px;
+  border-collapse: collapse;
+  
+}
+#remove:hover{
+  cursor: pointer;
+}
